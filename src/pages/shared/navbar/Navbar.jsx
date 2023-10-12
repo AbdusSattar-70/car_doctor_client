@@ -10,6 +10,15 @@ const Navbar = () => {
       <li>
         <Link to="/about"> About</Link>
       </li>
+      <li>
+        <Link to="/"> Services</Link>
+      </li>
+      <li>
+        <Link to="/about"> Blog</Link>
+      </li>
+      <li>
+        <Link to="/about"> Contact</Link>
+      </li>
     </>
   );
 
@@ -48,7 +57,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navItems}</ul>
       </div>
       <div className="navbar-end">
-        <button className="btn btn-outline btn-warning">Appointment</button>
+        <button className="btn btn-outline btn-secondary">Appointment</button>
       </div>
     </div>
   );
