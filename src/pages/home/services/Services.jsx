@@ -5,11 +5,11 @@ const Services = () => {
   const [services, setServices] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-
+  const url = "http://localhost:5000/service";
   useEffect(() => {
     try {
       const fetchData = async () => {
-        const res = await fetch("services.json");
+        const res = await fetch(url);
         const data = await res.json();
         setServices(data);
         setLoading(false);
@@ -36,14 +36,14 @@ const Services = () => {
         {error ? (
           <p>{error}</p>
         ) : loading ? (
-          <p>
+          <div className="flex justify-center">
             {loading}
             <span className="loading loading-spinner text-primary"></span>
             <span className="loading loading-spinner text-secondary"></span>
             <span className="loading loading-spinner text-accent"></span>
             <span className="loading loading-spinner text-neutral"></span>
             <span className="loading loading-spinner text-info"></span>
-          </p>
+          </div>
         ) : (
           services.map((service) => (
             <ServiceCard key={service._id} service={service} />
