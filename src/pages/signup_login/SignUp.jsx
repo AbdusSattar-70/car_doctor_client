@@ -8,7 +8,7 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { name, email, password } = e.target;
+    const { email, password } = e.target;
     createUser(email.value, password.value)
       .then((userCredential) => {
         const user = userCredential.user;
@@ -17,7 +17,7 @@ const SignUp = () => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(error);
+        console.log(errorCode, errorMessage);
       });
   };
 
